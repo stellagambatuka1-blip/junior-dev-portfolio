@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:18px;
+      background:rgba(15,23,42,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-size:16px;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:#38bdf8;
+      transition:0.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    /* ================= HERO SECTION ================= */
+
+    .hero{
+      padding:100px 8% 70px;
+      text-align:center;
+      background:
+      linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+      url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero h1{
+      font-size:65px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      color:#d1d5db;
+      font-size:18px;
+      max-width:700px;
+      margin:auto;
+    }
+
+    /* ================= PROJECT SECTION ================= */
+
+    .projects-section{
+      max-width:1300px;
+      margin:auto;
+      padding:80px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#9ca3af;
+    }
+
+    /* ================= PROJECT GRID ================= */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .project-card{
+      background:#111827;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.4s;
+      box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .project-card:hover{
+      transform:translateY(-12px);
+      border-color:#38bdf8;
+    }
+
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:25px;
+    }
+
+    .project-content h3{
+      font-size:26px;
+      margin-bottom:15px;
+    }
+
+    .project-content p{
+      color:#d1d5db;
+      margin-bottom:15px;
+      line-height:1.7;
+    }
+
+    .tech{
+      color:#38bdf8;
+      font-weight:600;
+      margin-bottom:20px;
+      display:block;
+    }
+
+    /* ================= BUTTONS ================= */
+
+    .project-links{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      text-decoration:none;
+      padding:12px 20px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .live-btn{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    .live-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(56,189,248,0.4);
+    }
+
+    .github-btn{
+      border:2px solid #38bdf8;
+      color:#38bdf8;
+    }
+
+    .github-btn:hover{
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#020617;
+      color:#94a3b8;
+      margin-top:50px;
+    }
+
+    /* ================= ANIMATIONS ================= */
+
+    .hidden{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section-title h2{
+        font-size:34px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <a href="index.html">homepage</a>
+    <a href="contact.html">contact</a>
+    <a href="projects3.html">project</a>
+	<a href="infomation.html">about</a>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1 class="hidden">
+      My Projects
+    </h1>
+
+    <p class="hidden">
+      A collection of projects showcasing my skills in
+      software development, web design, problem-solving,
+      and modern user experience creation.
+    </p>
+
+  </section>
+
+  <!-- PROJECT SECTION -->
+
+  <section class="projects-section">
+
+    <div class="section-title hidden">
+
+      <h2>Featured Projects</h2>
+
+      <p>
+        Real projects built with creativity and passion.
+      </p>
+
+    </div>
+
+    <!-- PROJECT GRID -->
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+
+      <div class="project-card hidden">
+
+        <img src="images/project1.jpg" alt="Portfolio Website">
+
+        <div class="project-content">
+
+          <h3>Portfolio Website</h3>
+
+          <p>
+            A modern personal portfolio website designed to
+            showcase my skills, projects, education,
+            and development journey.
+          </p>
+
+          <span class="tech">
+            HTML • CSS • JavaScript
+          </span>
+
+          <div class="project-links">
+
+            <a href="#" class="btn live-btn">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn github-btn">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="project-card hidden">
+
+        <img src="images/project2.jpg" alt="Task Manager App">
+
+        <div class="project-content">
+
+          <h3>Article site</h3>
+
+          <p>
+            A News,Anime,Movies and Pop culture live article site
+			that covers real stories and Deburts and sport  
+          </p>
+
+          <span class="tech">
+            mongo db • Node Js • JavaScript
+          </span>
+
+          <div class="project-links">
+
+            <a href="https://geekbloger.onrender.com" class="btn live-btn">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn github-btn">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+
+      <div class="project-card hidden">
+
+        <img src="images/project3.jpg" alt="Weather App">
+
+        <div class="project-content">
+
+          <h3>Malawi-fM</h3>
+
+          <p>
+            A radio site that plays live 24 radio station from Malawi
+			the objective was to connect malawians overseeas to listen
+			to their favourite station even when the are abroad.
+          </p>
+
+          <span class="tech">
+            HTML • CSS • JavaScript 
+          </span>
+
+          <div class="project-links">
+
+            <a href="https://malawi-abroad-fm.netlify.app" class="btn live-btn">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn github-btn">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 4 -->
+
+      <div class="project-card hidden">
+
+        <img src="images/project4.jpg" alt="E-commerce Prototype">
+
+        <div class="project-content">
+
+          <h3>E-Commerce Prototype</h3>
+
+          <p>
+            An online store prototype with product pages,
+            shopping cart functionality,
+            and responsive layouts.
+          </p>
+
+          <span class="tech">
+            HTML • CSS • JavaScript • PHP
+          </span>
+
+          <div class="project-links">
+
+            <a href="#" class="btn live-btn">
+              Live Demo
+            </a>
+
+            <a href="#" class="btn github-btn">
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 T. Mike Gambatuka | All Rights Reserved
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // SCROLL REVEAL ANIMATION
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  </script>
+
+</body>
+</html>

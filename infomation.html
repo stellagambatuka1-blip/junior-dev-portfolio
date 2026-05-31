@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV | T. Mike Gambatuka</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.7;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:18px;
+      background:rgba(15,23,42,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-size:16px;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:#38bdf8;
+      transition:0.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      padding:70px 8%;
+      background:
+      linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+      url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80");
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero-container{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      align-items:center;
+      gap:50px;
+    }
+
+    .profile-image{
+      display:flex;
+      justify-content:center;
+    }
+
+    .profile-image img{
+      width:300px;
+      height:300px;
+      object-fit:cover;
+      border-radius:25px;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 35px rgba(56,189,248,0.45);
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-12px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.1;
+      margin-bottom:15px;
+    }
+
+    .hero-text h2{
+      color:#38bdf8;
+      font-size:24px;
+      margin-bottom:25px;
+      font-weight:500;
+    }
+
+    .hero-text p{
+      color:#d1d5db;
+      font-size:17px;
+      max-width:650px;
+    }
+
+    /* ================= SOCIALS ================= */
+
+    .socials{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .socials a{
+      text-decoration:none;
+      padding:12px 22px;
+      border-radius:10px;
+      background:#1e293b;
+      color:white;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .socials a:hover{
+      transform:translateY(-5px);
+      background:#38bdf8;
+      color:#0f172a;
+    }
+
+    /* ================= MAIN CONTENT ================= */
+
+    .main{
+      max-width:1200px;
+      margin:auto;
+      padding:70px 8%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:35px;
+    }
+
+    .card{
+      background:#111827;
+      padding:30px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#38bdf8;
+    }
+
+    .card h3{
+      color:#38bdf8;
+      margin-bottom:20px;
+      font-size:24px;
+    }
+
+    .card ul,
+    .card ol{
+      padding-left:20px;
+    }
+
+    .card li{
+      margin-bottom:12px;
+      color:#d1d5db;
+    }
+
+    .card p{
+      color:#d1d5db;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#020617;
+      text-align:center;
+      padding:20px;
+      color:#94a3b8;
+      margin-top:30px;
+    }
+
+    /* ================= SCROLL ANIMATION ================= */
+
+    .hidden{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .hero{
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-text h2{
+        font-size:20px;
+      }
+
+      .profile-image img{
+        width:240px;
+        height:240px;
+      }
+
+      .socials{
+        justify-content:center;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+  <a href="index.html">homepage</a>
+    <a href="contact.html">contact</a>
+    <a href="projects3.html">project</a>
+	<a href="infomation.html">about</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="profile-image hidden">
+
+        <!-- CHANGE IMAGE PATH -->
+        <img src="images/mike.jpg" alt="T. Mike Gambatuka">
+
+      </div>
+
+      <div class="hero-text hidden">
+
+        <h1>T. Mike Gambatuka</h1>
+
+        <h2>Software Developer • Designer • Problem Solver</h2>
+
+        <p>
+          Detail-oriented and highly motivated Information Technology
+          professional with strong skills in software development,
+          troubleshooting, design, and problem-solving.
+          Passionate about building modern digital experiences and
+          continuously learning new technologies in fast-paced environments.
+        </p>
+
+        <!-- SOCIALS -->
+
+        <div class="socials">
+
+          <a href="https://facebook.com" target="_blank">
+            🌐 Facebook
+          </a>
+
+          <a href="https://wa.me/1234567890" target="_blank">
+            📱 WhatsApp
+          </a>
+
+          <a href="https://instagram.com" target="_blank">
+            📷 Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MAIN CONTENT -->
+
+  <section class="main">
+
+    <!-- EDUCATION -->
+
+    <div class="card hidden">
+
+      <h3>Education</h3>
+
+      <ul>
+        <li>Florida Park High School</li>
+        <li>Matriculated</li>
+        <li>Greenview college</li>
+      </ul>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="card hidden">
+
+      <h3>Skills</h3>
+
+      <ol>
+        <li>HTML5 & CSS</li>
+		<li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Responsive Web Design </li>
+        <li>Web Application Devepment</li>
+      </ol>
+
+    </div>
+
+    <!-- CERTIFICATES -->
+
+    <div class="card hidden">
+
+      <h3>Certificates</h3>
+
+      <ul>
+	  <li>Software Developer Certificate</li>
+        <li>Responsive Web Design</li>
+        <li>Python certifcate</li>
+        <li>Javascript Certificate</li>
+      </ul>
+
+    </div>
+
+    <!-- EXPERIENCE -->
+
+    <div class="card hidden">
+
+      <h3>Work Experience</h3>
+
+      <ul>
+        <li>Freelancing Designer/Upwork</li>
+        <li>Local Website Projects</li>
+        <li>Short-Term Contract Developer</li>
+        <li>IT Technician</li>
+      </ul>
+
+    </div>
+
+    <!-- ACTIVITIES -->
+
+    <div class="card hidden">
+
+      <h3>Activities</h3>
+
+      <ul>
+        <li>Web development</li>
+        <li>JavaScript project</li>
+        <li>Tech project</li>
+        <li>python programming</li>
+      </ul>
+
+    </div>
+
+    <!-- INTERESTS -->
+
+    <div class="card hidden">
+
+      <h3>Interests</h3>
+
+      <p>
+        Technology, programming, software development,
+        UI/UX design, creative design,
+        and learning modern web technologies.
+		building interative websits.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 T. Mike Gambatuka | All Rights Reserved
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // SCROLL REVEAL ANIMATION
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+  </script>
+
+</body>
+</html>

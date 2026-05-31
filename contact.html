@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:18px;
+      background:rgba(15,23,42,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-size:16px;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0%;
+      height:2px;
+      background:#38bdf8;
+      transition:0.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      text-align:center;
+      padding:100px 8% 70px;
+      background:
+      linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+      url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80");
+
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero h1{
+      font-size:65px;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      color:#d1d5db;
+      font-size:18px 
+    }
+
+    /* ================= CONTACT SECTION ================= */
+
+    .contact-section{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 8%;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+    }
+
+    /* LEFT SIDE */
+
+    .contact-info{
+      background:#111827;
+      padding:40px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-info h2{
+      font-size:38px;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    .contact-info p{
+      color:#d1d5db;
+      margin-bottom:30px;
+      line-height:1.8;
+    }
+
+    .info-box{
+      margin-bottom:25px;
+      padding:20px;
+      background:#1e293b;
+      border-radius:16px;
+      transition:0.3s;
+    }
+
+    .info-box:hover{
+      transform:translateY(-5px);
+      border:1px solid #38bdf8;
+    }
+
+    .info-box h3{
+      margin-bottom:8px;
+      color:#38bdf8;
+    }
+
+    .info-box span{
+      color:#d1d5db;
+    }
+
+    /* RIGHT SIDE */
+
+    .contact-form{
+      background:#111827;
+      padding:40px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-form h2{
+      font-size:38px;
+      margin-bottom:25px;
+      color:#38bdf8;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:12px;
+      background:#1e293b;
+      color:white;
+      font-size:16px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    input:focus,
+    textarea:focus{
+      border:1px solid #38bdf8;
+      box-shadow:0 0 10px rgba(56,189,248,0.3);
+    }
+
+    textarea{
+      resize:none;
+      height:160px;
+    }
+
+    button{
+      padding:16px;
+      border:none;
+      border-radius:12px;
+      background:#38bdf8;
+      color:#0f172a;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:translateY(-4px);
+      box-shadow:0 10px 25px rgba(56,189,248,0.4);
+    }
+
+    /* ================= SUCCESS MESSAGE ================= */
+
+    .success-message{
+      margin-top:20px;
+      color:#4ade80;
+      font-weight:600;
+      display:none;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#020617;
+      color:#94a3b8;
+      margin-top:50px;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .hidden{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all 1s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:45px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .contact-info h2,
+      .contact-form h2{
+        font-size:30px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+       <a href="index.html">homepage</a>
+    <a href="contact.html">contact</a>
+    <a href="projects3.html">project</a>
+	<a href="infomation.html">about</a>
+	
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1 class="hidden">Contact Me</h1>
+
+    <p class="hidden">
+      Interested in working together or discussing a project?
+      Feel free to contact me anytime.
+    </p>
+
+  </section>
+
+  <!-- CONTACT SECTION -->
+
+  <section class="contact-section">
+
+    <!-- LEFT -->
+
+    <div class="contact-info hidden">
+
+      <h2>Get In Touch</h2>
+
+      <p>
+        I’m always open to discussing software development,
+        freelance opportunities, creative projects,
+        and collaborations.
+      </p>
+
+      <div class="info-box">
+        <h3>Email</h3>
+        <span>stellagambatuka1@gmail.com</span>
+      </div>
+
+      <div class="info-box">
+        <h3>Phone</h3>
+        <span>+27 64 347 1665</span>
+      </div>
+
+      <div class="info-box">
+        <h3>Location</h3>
+        <span>Johannesburg,Roodepoort CBD,South Africa,</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="contact-form hidden">
+
+      <h2>Send Message</h2>
+
+      <form id="contactForm">
+
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="email" placeholder="Your Email" required>
+
+        <input type="text" placeholder="Subject" required>
+
+        <textarea placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+
+      <div class="success-message" id="successMessage">
+        ✅ Message sent successfully!
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 T. Mike Gambatuka | All Rights Reserved
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // SCROLL REVEAL ANIMATION
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+        }
+
+      });
+
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+
+    // CONTACT FORM MESSAGE
+
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(event){
+
+      event.preventDefault();
+
+      successMessage.style.display = "block";
+
+      form.reset();
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+
+Replace:
+
+* `your@email.com` with your real email
+* `+27 00 000 0000` with your number
+* `images/` with your real image folder if needed
