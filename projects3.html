@@ -230,21 +230,120 @@
 
     /* ================= RESPONSIVE ================= */
 
-    @media(max-width:768px){
+  /* ================= TABLETS ================= */
 
-      .hero h1{
-        font-size:45px;
-      }
+@media (max-width:768px){
 
-      .hero p{
-        font-size:16px;
-      }
+  nav{
+    flex-wrap:wrap;
+    gap:15px;
+    padding:15px 10px;
+  }
 
-      .section-title h2{
-        font-size:34px;
-      }
+  nav a{
+    font-size:14px;
+  }
 
-    }
+  .hero{
+    padding:70px 5% 50px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:15px;
+    max-width:100%;
+  }
+
+  .projects-section{
+    padding:50px 5%;
+  }
+
+  .section-title h2{
+    font-size:30px;
+  }
+
+  .projects-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .project-card img{
+    height:200px;
+  }
+
+  .project-content{
+    padding:20px;
+  }
+
+  .project-content h3{
+    font-size:22px;
+  }
+
+  .project-content p{
+    font-size:15px;
+  }
+
+  .project-links{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width:480px){
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .project-card{
+    border-radius:16px;
+  }
+
+  .project-card img{
+    height:180px;
+  }
+
+  .project-content{
+    padding:18px;
+  }
+
+  .project-content h3{
+    font-size:20px;
+  }
+
+  .project-content p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .tech{
+    font-size:14px;
+  }
+
+  .btn{
+    padding:12px;
+    font-size:14px;
+  }
+
+}
 
   </style>
 </head>

@@ -262,33 +262,109 @@
     }
 
     /* ================= RESPONSIVE ================= */
-    @media(max-width:768px){
+   /* ================= MOBILE ================= */
+@media (max-width: 768px){
 
-      nav{
-        padding:15px 5%;
-      }
+  nav{
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 5%;
+  }
 
-      nav ul{
-        gap:15px;
-      }
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
 
-      .hero-text h1{
-        font-size:45px;
-      }
+  nav ul a{
+    font-size: 14px;
+  }
 
-      .hero-text p{
-        font-size:16px;
-      }
+  .hero{
+    padding: 180px 5% 60px;
+    text-align: center;
+  }
 
-      .hero-image img{
-        width:240px;
-        height:240px;
-      }
+  .hero-container{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-      .section-title h2{
-        font-size:34px;
-      }
-    }
+  .hero-text h1{
+    font-size: 38px;
+  }
+
+  .hero-text h3{
+    font-size: 18px;
+  }
+
+  .hero-text p{
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .btns{
+    justify-content: center;
+  }
+
+  .btn{
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .hero-image{
+    order: -1;
+  }
+
+  .hero-image img{
+    width: 220px;
+    height: 220px;
+  }
+
+  .section-title h2{
+    font-size: 30px;
+  }
+
+  .about{
+    padding: 70px 5%;
+  }
+
+  .about-content{
+    grid-template-columns: 1fr;
+  }
+
+  .skills{
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card{
+    padding: 20px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px){
+
+  .hero-text h1{
+    font-size: 30px;
+  }
+
+  .hero-image img{
+    width: 180px;
+    height: 180px;
+  }
+
+  .logo{
+    font-size: 20px;
+  }
+
+  .section-title h2{
+    font-size: 26px;
+  }
+}
   </style>
 </head>
 <body>
